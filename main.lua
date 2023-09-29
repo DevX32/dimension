@@ -12,7 +12,7 @@ lib.addCommand('adddimesion', {
         restricted = 'group.admin'
 }, true, function(source, args)
     local playerId, dimension = tonumber(args[1]), tonumber(args[2])
-    local xPlayer, xTarget = QBCore.Functions.GetPlayer(source), QBCore.Functions.GetPlayer(playerId)
+    local xPlayer, xTarget = exports.qbx_core:GetPlayer(source), exports.qbx_core:GetPlayer(playerId)
     if playerId and xTarget then
         if dimension then
             local vehicle = GetVehiclePedIsIn(GetPlayerPed(playerId))
@@ -41,7 +41,7 @@ lib.addCommand('getdimension', {
     restricted = 'group.admin'
 }, true, function(source, args)
     local playerId = tonumber(args[1])
-    local xTarget = QBCore.Functions.GetPlayer(playerId)
+    local xTarget = exports.qbx_core:GetPlayer(playerId)
     if playerId and xTarget then
         TriggerClientEvent('QBCore:Notify', source, Locale('get_dimension_notification', GetPlayerName(playerId), GetPlayerRoutingBucket(playerId)), 'success')
     else
