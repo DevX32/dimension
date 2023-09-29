@@ -28,8 +28,7 @@ lib.addCommand('adddimesion', {
         end
     else
         TriggerClientEvent('ox_lib:Notify', source, Locale('add_dimension_error_notplayerid'), 'error')
-    end
-end, 'admin')
+ end
 
 lib.addCommand('getdimension', {
     help = 'Set the dimension of a player',
@@ -46,5 +45,4 @@ lib.addCommand('getdimension', {
         TriggerClientEvent('ox_lib:Notify', source, Locale('get_dimension_notification', GetPlayerName(playerId), GetPlayerRoutingBucket(playerId)), 'success')
     else
         TriggerClientEvent('ox_lib:Notify', source, Locale('get_dimension_error_notplayerid'), 'error')
-    end
-end, 'admin')
+end
