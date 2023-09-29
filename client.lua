@@ -1,8 +1,15 @@
-QBCore = exports['Core']:GetCoreObject()
-
-QBCore.Commands.Add('adddimesion, Locale('add_dimension_help'), {
-    {name = 'playerId', help = Locale('add_dimension_player')},
-    {name = 'dimension', help = Locale('add_dimension_dimension')}
+lib.addCommand('adddimesion', {
+    help = 'Set the dimension of a player',
+    params = {
+        {
+            name = 'playerId',
+            help = 'Player,
+        },
+        {
+            name = 'dimension',
+            help = 'dimension',
+        },
+        restricted = 'group.admin'
 }, true, function(source, args)
     local playerId, dimension = tonumber(args[1]), tonumber(args[2])
     local xPlayer, xTarget = QBCore.Functions.GetPlayer(source), QBCore.Functions.GetPlayer(playerId)
@@ -24,8 +31,14 @@ QBCore.Commands.Add('adddimesion, Locale('add_dimension_help'), {
     end
 end, 'admin')
 
-QBCore.Commands.Add('getdimension', Locale('get_dimension_help'), {
-    {name = 'playerId', help = Locale('get_dimension_player')}
+lib.addCommand('getdimension', {
+    help = 'Set the dimension of a player',
+    params = {
+        {
+            name = 'playerId',
+            help = 'Player,
+        },
+    restricted = 'group.admin'
 }, true, function(source, args)
     local playerId = tonumber(args[1])
     local xTarget = QBCore.Functions.GetPlayer(playerId)
