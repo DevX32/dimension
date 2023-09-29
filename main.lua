@@ -9,7 +9,7 @@ lib.addCommand('adddimesion', {
             name = 'dimension',
             help = 'dimension',
         },
-        restricted = 'group.admin'
+   restricted = 'group.admin'
 }, true, function(source, args)
     local playerId, dimension = tonumber(args[1]), tonumber(args[2])
     local xPlayer, xTarget = exports.qbx_core:GetPlayer(source), exports.qbx_core:GetPlayer(playerId)
@@ -38,7 +38,7 @@ lib.addCommand('getdimension', {
             name = 'playerId',
             help = 'Player,
         },
-    restricted = 'group.admin'
+   restricted = 'group.admin'
 }, true, function(source, args)
     local playerId = tonumber(args[1])
     local xTarget = exports.qbx_core:GetPlayer(playerId)
