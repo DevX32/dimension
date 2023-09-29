@@ -22,12 +22,12 @@ lib.addCommand('adddimesion', {
             end
 
             SetPlayerRoutingBucket(playerId, dimension)
-            TriggerClientEvent('QBCore:Notify', source, Locale('add_dimension_notification', GetPlayerName(playerId), dimension), 'success')
+            TriggerClientEvent('ox_lib:Notify', source, Locale('add_dimension_notification', GetPlayerName(playerId), dimension), 'success')
         else
-            TriggerClientEvent('QBCore:Notify', source, Locale('add_dimension_error_notdimension'), 'error')
+            TriggerClientEvent('ox_lib:Notify', source, Locale('add_dimension_error_notdimension'), 'error')
         end
     else
-        TriggerClientEvent('QBCore:Notify', source, Locale('add_dimension_error_notplayerid'), 'error')
+        TriggerClientEvent('ox_lib:Notify', source, Locale('add_dimension_error_notplayerid'), 'error')
     end
 end, 'admin')
 
@@ -43,8 +43,8 @@ lib.addCommand('getdimension', {
     local playerId = tonumber(args[1])
     local xTarget = exports.qbx_core:GetPlayer(playerId)
     if playerId and xTarget then
-        TriggerClientEvent('QBCore:Notify', source, Locale('get_dimension_notification', GetPlayerName(playerId), GetPlayerRoutingBucket(playerId)), 'success')
+        TriggerClientEvent('ox_lib:Notify', source, Locale('get_dimension_notification', GetPlayerName(playerId), GetPlayerRoutingBucket(playerId)), 'success')
     else
-        TriggerClientEvent('QBCore:Notify', source, Locale('get_dimension_error_notplayerid'), 'error')
+        TriggerClientEvent('ox_lib:Notify', source, Locale('get_dimension_error_notplayerid'), 'error')
     end
 end, 'admin')
