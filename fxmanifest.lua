@@ -13,3 +13,7 @@ shared_scripts {
 server_scripts {
   'main.lua'
 }
+modules {
+    'qbx_core:playerdata',
+    'qbx_core:utils'
+}
