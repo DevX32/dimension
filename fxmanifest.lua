@@ -11,5 +11,5 @@ shared_scripts {
 }
 
 server_scripts {
-  'dime.lua'
+  'main.lua'
 }
